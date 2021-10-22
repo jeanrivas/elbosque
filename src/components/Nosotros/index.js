@@ -1,53 +1,34 @@
-import React, { useState } from 'react';
-import Video from '../../videos/video.mp4';
-import { Button } from '../ButtonElement';
-import { 
-    NosotrosContainer,
-    NosotrosBg,
-    VideoBg, 
-    NosotrosContent, 
-    NosotrosH1, 
-    NosotrosP, 
-    NosotrosBtnWrapper, 
-    ArrowForward, 
-    ArrowRight, 
+import React from 'react';
+import Main from '../../images/main.png';
+import {
+	NosotrosContainer,
+	NosotrosBg,
+	NosotrosContent,
+	NosotrosH1,
+	NosotrosP,
+	ImageBg,
 } from './NosotrosElements';
 
 const NosotrosSeccion = () => {
-
-    const [hover, setHover] = useState(false);
-
-    const onHover = () => {
-        setHover(!hover);
-    };
-
-    return (
-        <>
-            <NosotrosContainer>
-                <NosotrosBg>
-                    <VideoBg autoPlay loop muted src={Video} type='video/mp4'/>
-                </NosotrosBg>
-                <NosotrosContent>
-                    <NosotrosH1>Bienvenidos </NosotrosH1>
-                    <NosotrosP>
-                    Bienvenidos Bienvenidos Bienvenidos Bienvenidos Bienvenidos
-                    Bienvenidos Bienvenidos Bienvenidos Bienvenidos Bienvenidos
-                    Bienvenidos Bienvenidos
-                    </NosotrosP>
-                    <NosotrosBtnWrapper>
-                        <Button to="/registro"
-                         onMouseEnter={onHover} 
-                         onMouseLeave={onHover}
-                         primary='true'
-                         dark='true'
-                         >
-                            Get started {hover ? <ArrowForward />: <ArrowRight/>}
-                        </Button>
-                    </NosotrosBtnWrapper>
-                </NosotrosContent>
-            </NosotrosContainer>
-        </>
-    );
+	return (
+		<>
+			<NosotrosContainer>
+				<NosotrosBg>
+					<ImageBg src={Main} />
+				</NosotrosBg>
+				<NosotrosContent>
+					<NosotrosH1>MERCADO EL BOSQUE ASÍ SOMOS</NosotrosH1>
+					<NosotrosP>
+						La familia del Mercado El Bosque está conformada por empresarios con 38 años
+						brindándote la mejor calidad de productos y servicios dirigidos a tu familia y
+						tu negocio. A diario alimentamos a nuestra comunidad. Porque esforzamos por
+						brindarte una grata experiencia en nuestro espacio, nuestro nuevo santuario:
+						El Bosque.
+					</NosotrosP>
+				</NosotrosContent>
+			</NosotrosContainer>
+		</>
+	);
 };
 
 export default NosotrosSeccion;
